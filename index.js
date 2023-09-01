@@ -28,7 +28,9 @@ app.use("/user",Userrouter);
 const {categoryrouter}=require("./routes/category.routes");
 app.use("/category",categoryrouter);
 
-
+// product routes
+const {productrouter}=require("./routes/product.routes");
+app.use("/product",productrouter);
 
 
 app.listen(8080,async()=>{
