@@ -5,7 +5,7 @@ const {Cartmodel}=require("../models/cart.model");
 const {Productmodel}=require("../models/product.model")
 
 
-
+// Add to cart
 
 cartroute.post("/addtocart",async(req,res)=>{
 
@@ -58,7 +58,7 @@ cartroute.get("/allcart",async(req,res)=>{
     const userid=payload.userid;
 
     try {
-       let cart=await Cartmodel.find({userid}).populate("productID");
+       let cart=await Cartmodel.find({userid}).populate("productid");
 
        res.status(201).json({data:cart,status:"success"})
 

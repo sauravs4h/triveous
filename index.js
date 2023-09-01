@@ -33,9 +33,12 @@ const {productrouter}=require("./routes/product.routes");
 app.use("/product",authentication,productrouter);
 
 //cart routes
-
 const {cartroute}=require("./routes/cart.routes");
-app.use("/cart",authentication,cartroute)
+app.use("/cart",authentication,cartroute);
+
+//order routes
+const {orderrouter}=require("./routes/order.routes");
+app.use("/order",authentication,orderrouter)
 
 app.listen(8080,async()=>{
     try {
