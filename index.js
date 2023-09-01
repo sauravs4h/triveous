@@ -20,23 +20,23 @@ const {authentication}=require("./middlewares/authentication")
 
 //Routes:-
 
-//user routes
+//user routes (Not Authenticate Route)
 const {Userrouter}=require("./routes/User.routes");
 app.use("/user",Userrouter);
 
-// category routes
+// category routes (Not Authenticate Route)
 const {categoryrouter}=require("./routes/category.routes");
 app.use("/category",categoryrouter);
 
-// product routes
+// product routes (Authenticate Route)
 const {productrouter}=require("./routes/product.routes");
 app.use("/product",authentication,productrouter);
 
-//cart routes
+//cart routes (Authenticate Route)
 const {cartroute}=require("./routes/cart.routes");
 app.use("/cart",authentication,cartroute);
 
-//order routes
+//order routes (Authenticate Route)
 const {orderrouter}=require("./routes/order.routes");
 app.use("/order",authentication,orderrouter)
 

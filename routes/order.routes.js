@@ -58,6 +58,7 @@ orderrouter.get("/allorders",async(req,res)=>{
     }
 })
 
+// Get specific order by id
 
 orderrouter.get("/product/:id",async(req,res)=>{
 
@@ -77,7 +78,7 @@ orderrouter.get("/product/:id",async(req,res)=>{
     }
 })
 
-
+// delete the order
 orderrouter.delete("/deleteorder/:id",async(req,res)=>{
 
     let orderid=req.params.id
