@@ -48,11 +48,12 @@ orderrouter.get("/allorders",async(req,res)=>{
 
     let userid=req.body.userid
     try {
-        let products=await Ordermodel.find({userid}).populate("productID")
+        let products=await Ordermodel.find({userid}).populate("productid")
 
         res.status(201).json({data:products,status:"success"})
         
     } catch (error) {
+        console.log(error)
         res.status(401).json({msg:"something went wrong",status:"error"})
     }
 })

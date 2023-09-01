@@ -9,11 +9,11 @@ let orderSchema=mongoose.Schema({
         type:Number,
         require:true
     },
-    productID:{
+    productid:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"product"
     },
-    userID:{
+    userid:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"users"
     },
