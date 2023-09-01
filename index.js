@@ -24,6 +24,9 @@ const {authentication}=require("./middlewares/authentication")
 const {Userrouter}=require("./routes/User.routes");
 app.use("/user",Userrouter);
 
+// category routes
+const {categoryrouter}=require("./routes/category.routes");
+app.use("/category",categoryrouter);
 
 
 

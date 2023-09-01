@@ -3,7 +3,7 @@ const mongoose=require("mongoose");
 const categorySchema=mongoose.Schema({
     Name:{
         type:String,
-        required: true,
+        require: true,
     }
 })
 
