@@ -53,4 +53,4 @@ Welcome to our E-Commerce project! This project is built using Node.js and Expre
 | `/order/:id`        | GET    | Get order by ID            | `{}`         |
 | `/deleteorder/:id`  | DELETE | Delete an order by ID      | `{}`         |
 
-Feel free to explore these routes to build and manage your e-commerce platform. If you have any questions or need further assistance, please refer to our API documentation or contact our support team.
+
