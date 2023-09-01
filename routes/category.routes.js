@@ -2,7 +2,7 @@ const express=require("express");
 const categoryrouter=express.Router();
 const {Categorymodel}=require("../models/category.model")
 
-
+//All category
 categoryrouter.get("/allcategory",async(req,res)=>{
 
     try {
@@ -15,6 +15,8 @@ categoryrouter.get("/allcategory",async(req,res)=>{
     }
 });
 
+
+// Add category
 categoryrouter.post("/addcategory",async(req,res)=>{
     const {Name}=req.body;
 
