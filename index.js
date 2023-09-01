@@ -30,8 +30,12 @@ app.use("/category",categoryrouter);
 
 // product routes
 const {productrouter}=require("./routes/product.routes");
-app.use("/product",productrouter);
+app.use("/product",authentication,productrouter);
 
+//cart routes
+
+const {cartroute}=require("./routes/cart.routes");
+app.use("/cart",authentication,cartroute)
 
 app.listen(8080,async()=>{
     try {

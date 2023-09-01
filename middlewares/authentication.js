@@ -15,7 +15,7 @@ const authentication=(req,res,next)=>{
             }
               const userid=decoded.userid
              // console.log(userid) 
-              payload.userID=userid;
+              payload.userid=userid;
               next()
             });
 

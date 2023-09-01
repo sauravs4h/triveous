@@ -2,6 +2,7 @@ const express=require("express");
 const productrouter=express.Router();
 const {Productmodel}=require("../models/product.model");
 
+//Get all products here
 productrouter.get("/getallproduct",async(req,res)=>{
 
     try {
@@ -13,6 +14,7 @@ productrouter.get("/getallproduct",async(req,res)=>{
     }
 });
 
+// Get product by ID
 productrouter.get("/getproductbyid/:productid",async(req,res)=>{
 
     const productid=req.params.productid
@@ -25,6 +27,8 @@ productrouter.get("/getproductbyid/:productid",async(req,res)=>{
     }
 })
 
+
+//Add product to database
 productrouter.post("/addproduct",async(req,res)=>{
 
     const payload=req.body;
