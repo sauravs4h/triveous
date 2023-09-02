@@ -4,6 +4,8 @@ Welcome to our E-Commerce project! This project is built using Node.js and Expre
 
 **Base URL:** `http://localhost:8080`
 
+**Deploy URL:** `https://triveous-8zpt.onrender.com/`
+
 ## Table of Contents
 
 1. [User Routes](#user-routes-not-authenticate)
