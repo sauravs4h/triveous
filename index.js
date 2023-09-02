@@ -2,6 +2,10 @@ const express=require("express");
 var bodyParser = require('body-parser')
 const app=express();
 
+//cors
+var cors = require('cors')
+app.use(cors())
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
