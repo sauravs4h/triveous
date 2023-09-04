@@ -6,6 +6,8 @@ Welcome to our E-Commerce project! This project is built using Node.js and Expre
 
 **Deploy URL:** `https://triveous-8zpt.onrender.com/`
 
+**Demo video link** `https://drive.google.com/file/d/15L4FPwk_5olQ4iLsLBwJjPEEN6uefpYW/view?usp=sharing`
+
 ## Table of Contents
 
 1. [User Routes](#user-routes-not-authenticate)  /user
