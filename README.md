@@ -43,7 +43,7 @@ Welcome to our E-Commerce project! This project is built using Node.js and Expre
 | Route                | Method | Description                  | Request Body                                   |
 |----------------------|--------|------------------------------|------------------------------------------------|
 | `cart/addtocart`         | POST   | Add a product to the cart    | `{ productid, quantity, total_price }` |
-| `/allcart`           | GET    | Get all items in the cart    | `{}`                                           |
+| `cart/allcart`           | GET    | Get all items in the cart    | `{}`                                           |
 | `cart/update/:id`        | PATCH  | Update quantity in the cart  | `{ quantity }`                                 |
 | `cart/deletecart/:id`    | DELETE | Delete item from the cart    | `{}`                                           |
 | `cart/totalprice`        | GET    | Calculate total cart price   | `{}`                                           |
