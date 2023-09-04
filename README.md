@@ -8,11 +8,11 @@ Welcome to our E-Commerce project! This project is built using Node.js and Expre
 
 ## Table of Contents
 
-1. [User Routes](#user-routes-not-authenticate)
-2. [Category Routes](#category-routes-not-authenticate)
-3. [Product Routes](#product-routes-authenticate)
-4. [Cart Routes](#cart-routes-authenticate)
-5. [Order Routes](#order-routes-authenticate)
+1. [User Routes](#user-routes-not-authenticate)  /user
+2. [Category Routes](#category-routes-not-authenticate)  /category
+3. [Product Routes](#product-routes-authenticate)  /product
+4. [Cart Routes](#cart-routes-authenticate)   /cart
+5. [Order Routes](#order-routes-authenticate)  /order
 
 ## User Routes (Not Authenticate Route)
 
