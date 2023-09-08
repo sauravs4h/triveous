@@ -3,20 +3,42 @@ const orderrouter=express.Router();
 
 const {Ordermodel}=require("../models/order.model");
 const {Cartmodel}=require("../models/cart.model");
+const  { ShipmentModel }=require("../models/shipment.model")
+
+
+
+// genrate traking number
+
+function generateTrackingNumber() {
+    const prefix = "SH"; 
+    const randomDigits = Math.floor(Math.random() * 10000); 
+
+   
+    const paddedNumber = String(randomDigits).padStart(4, "0");
+
+    
+    const trackingNumber = `${prefix}${paddedNumber}`;
+
+    return trackingNumber;
+}
+
+
 
 // place the order
 
 orderrouter.post("/placeorder",async(req,res)=>{
 
-    const payload=req.body;
-    const userid=payload.userid;
+    const payload = req.body;
+    const userid = payload.userid;
+    const shippingAddress = payload.shippingAddress; 
+
    
 
     try {
 
         let products=await Cartmodel.find({userid})
 
-        products.forEach(async(el)=>{
+        for (const el of products){
 
             let {quantity,total_price,productid,userid}=el;
 
@@ -29,7 +51,16 @@ orderrouter.post("/placeorder",async(req,res)=>{
             })
 
             await orderitam.save();
-        })
+
+            let shipment = new ShipmentModel({
+                order: orderitam._id,
+                trackingNumber: generateTrackingNumber(), 
+                shippingStatus: "Processing",
+                shippingAddress: shippingAddress
+            });
+
+            await shipment.save();
+        }
 
         await Cartmodel.deleteMany({userid});
 
@@ -41,6 +72,26 @@ orderrouter.post("/placeorder",async(req,res)=>{
     }
 
 })
+
+//for shipment 
+
+
+
+// Add a new route to retrieve shipments
+orderrouter.get("/shipments", async (req, res) => {
+    const {orderid}=req.body;
+    try {
+        const shipments = await ShipmentModel.find({order:orderid})
+            .populate("order") 
+            .exec();
+
+        res.status(200).json({ data: shipments, status: "success" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Failed to retrieve shipments", status: "error" });
+    }
+});
+
 
 //All orders (order history)
 
